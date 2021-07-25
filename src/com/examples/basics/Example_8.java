@@ -1,9 +1,8 @@
 package com.examples.basics;
 
-public class Example_7 {
+public class Example_8 {
 
     public static void main(String[] args) throws InterruptedException {
-
         Thread t = new Thread() {
             @Override
             public void run() {
@@ -12,14 +11,11 @@ public class Example_7 {
                     try {sleep(500);}
                     catch (InterruptedException e) {e.printStackTrace();}}}
         };
-        t.setDaemon(true);
         t.start();
+        Thread.sleep(2000);
+        t.stop();
 
-        System.out.println("Main is going to sleep");
-        Thread.sleep(1500);
-        System.out.println("Main is stopped");
     }
-
 }
 
 
