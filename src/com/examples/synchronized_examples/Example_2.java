@@ -1,10 +1,10 @@
 package com.examples.synchronized_examples;
 
-public class Example_1 {
+public class Example_2 {
 
     boolean flag;
 
-    void m(boolean f) {
+    synchronized void m(boolean f) {
         this.flag = f;
         try {
             Thread.sleep(333);
@@ -15,7 +15,7 @@ public class Example_1 {
     }
 
     public static void main(String[] args) {
-        Example_1 e = new Example_1();
+        Example_2 e = new Example_2();
         new Thread(() -> {
             while (true){
                 e.m(false);
